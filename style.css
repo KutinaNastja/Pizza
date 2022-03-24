@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+}
+p {
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 30px;
+}
+.background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+  background-color: #00000080;
+}
+.header {
+  background-color: #fdcfd7;
+  display: flex;
+  padding: 0 10px 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.piZZa {
+  display: flex;
+  height: 100px;
+  cursor: pointer;
+}
+.logoPizza {
+  font-family: "Fredoka", sans-serif;
+  font-size: 70px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+}
+.logo {
+  display: flex;
+}
+.basket {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+  padding: 0 17px;
+  position: relative;
+  gap: 5px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+.basket:active {
+  transform: translateY(3px);
+}
+.bag {
+  height: 30px;
+  cursor: pointer;
+}
+.bag:hover {
+  display: none;
+}
+.right {
+  position: absolute;
+  height: 30px;
+  cursor: pointer;
+  top: 20px;
+  left: 143px;
+  opacity: 0%;
+  cursor: pointer;
+}
+.right:hover {
+  opacity: 100%;
+}
+.eats {
+  height: 50px;
+  padding: 0 10px;
+}
+.collect {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0 0 200px;
+}
+.go {
+  border-radius: 10px;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 30px;
+  padding: 0 50px;
+  background: #fdcfd7;
+  cursor: pointer;
+}
+.go:active {
+  transform: translateY(3px);
+}
+.pop_up {
+  display: flex;
+  z-index: 100;
+  position: absolute;
+  background-color: #fdcfd7;
+  border-radius: 10px;
+  left: 500px;
+  top: 200px;
+  height: 600px;
+  width: 900px;
+  flex-direction: column;
+  /* display: none; */
+  overflow: scroll;
+}
+.pop-up::-webkit-scrollbar {
+  width: 7px;
+  background-color: rgb(46, 47, 48);
+}
+.readyPizza{
+  display: flex;
+  /* display: none; */
+}
+.imgReadyPizza{
+  height: 100px;
+}
+.tableOfContents {
+  display: flex;
+  justify-content: space-around;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 20px;
+  flex-wrap: wrap;
+
+}
+.addIngredients {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  height: 20px;
+  width: 100px;
+}
+.tableOfIngredients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 15px 0;
+}
+.product {
+  display: flex;
+  height: 40px;
+  width: 215px;
+  justify-content: center;
+}
+.addIngredients:active {
+  transform: translateY(3px);
+}
+.productPhoto {
+  height: 100px;
+  width: 100px;
+}
+.closeBlock {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.close {
+  padding: 10px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+.makePizza {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.pizza {
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+}
+.card {
+  border: 5px solid #fdcfd7;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 610px;
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.name {
+  display: flex;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 30px;
+  padding: 0px 10px;
+}
+.ingredient {
+  padding: 10px;
+  display: flex;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 17px;
+  height: 110px;
+  width: 350px;
+}
+.purchase {
+  padding: 0px 10px;
+  display: flex;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.add {
+  padding: 10px 50px;
+  background: #fdcfd7;
+  border-radius: 10px;
+}

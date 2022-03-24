@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=M+PLUS+1:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza</title>
+  </head>
+  <body>
+    <div id="background" class="background"></div>
+    <div class="header">
+      <div class="logo">
+        <img class="piZZa" src="assets/pizza.png" alt="pizza" />
+        <div class="logoPizza">Pizza</div>
+      </div>
+      <div class="basket">
+        <p>Корзина</p>
+        <p class="orderPrice">0</p>
+        <img class="bag" src="assets/shopping-bag.png" alt="Корзина" />
+        <img class="right" src="assets/right.png" alt="Переход в корзину" />
+      </div>
+    </div>
+
+    <div class="collect">
+      <div class="content">
+        <p>Создай свой идеальный вкус!</p>
+        <div class="ingredients">
+          <img class="eats" src="assets/bacon.png" alt="Бекон" />
+          <img class="eats" src="assets/cheese.png" alt="Сыр" />
+          <img class="eats" src="assets/shrimp.png" alt="Креветка" />
+          <img class="eats" src="assets/broccoli.png" alt="Брокколи" />
+        </div>
+      </div>
+      <div class="go">Начать!</div>
+      <div id="popup" class="pop_up">
+        <div class="closeBlock">
+          <img id="close" class="close" src="assets/cancel.png" alt="Закрыть" />
+        </div>
+        <p class="makePizza">Создай свою пиццу!</p>
+        <div class="readyPizza">
+          <img class="imgReadyPizza" src="assets/pizza.png" alt="Пицца" />
+<div class="CostAndProducts">
+          <div class="addedGoods"></div>
+          <div class="sumOfIngredients">Стоимость пиццы:</div>
+        </div>
+        </div>
+        <div class="tableOfContents"></div>
+      </div>
+      <div class="menu">
+        <div class="filter">
+          <input type="radio" /><label for="">Мясная</label>
+          <input type="radio" /><label for="">Вегетарианская</label>
+        </div>
+        <div class="pizza"></div>
+      </div>
+      <div class="snacks"></div>
+      <div class="drinks"></div>
+    </div>
+    <div class="footer"></div>
+  </body>
+  <script src="script.js"></script>
+</html>

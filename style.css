@@ -80,6 +80,13 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
+  flex-direction: column;
+}
+.contentAndGo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 .content {
   display: flex;
@@ -91,12 +98,20 @@ p {
   border-radius: 10px;
   font-family: "M PLUS 1", sans-serif;
   font-size: 30px;
-  padding: 0 50px;
   background: #fdcfd7;
   cursor: pointer;
+  width: 117px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 .go:active {
   transform: translateY(3px);
+}
+.menu {
+  width: 100%;
 }
 .pop_up {
   display: flex;
@@ -109,18 +124,18 @@ p {
   height: 600px;
   width: 900px;
   flex-direction: column;
-  /* display: none; */
+  display: none;
   overflow: scroll;
 }
 .pop-up::-webkit-scrollbar {
   width: 7px;
   background-color: rgb(46, 47, 48);
 }
-.readyPizza{
+.readyPizza {
   display: flex;
   /* display: none; */
 }
-.imgReadyPizza{
+.imgReadyPizza {
   height: 100px;
 }
 .tableOfContents {
@@ -129,7 +144,6 @@ p {
   font-family: "M PLUS 1", sans-serif;
   font-size: 20px;
   flex-wrap: wrap;
-
 }
 .addIngredients {
   display: flex;
@@ -180,6 +194,7 @@ p {
   display: flex;
   padding: 20px;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .card {
   border: 5px solid #fdcfd7;

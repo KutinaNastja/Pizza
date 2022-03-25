@@ -124,16 +124,26 @@ p {
   height: 600px;
   width: 900px;
   flex-direction: column;
-  display: none;
+  /* display: none; */
   overflow: scroll;
 }
-.pop-up::-webkit-scrollbar {
-  width: 7px;
-  background-color: rgb(46, 47, 48);
+.pop_up::-webkit-scrollbar {
+  width: 0;
 }
 .readyPizza {
   display: flex;
-  /* display: none; */
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.addedGoods {
+  display: flex;
+  gap: 5px;
+}
+.closeIngredients {
+  height: 20px;
+  cursor: pointer;
 }
 .imgReadyPizza {
   height: 100px;

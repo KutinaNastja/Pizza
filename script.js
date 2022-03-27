@@ -64,6 +64,9 @@ let addIngredientsMenu = [
 const sumOfIngredients = document.querySelector(".sumOfIngredients");
 let order = [];
 let pizzaIngredients = [];
+const meat = document.querySelector(".meat");
+const vegetarian = document.querySelector(".vegetarian");
+const filter = document.querySelector(".filter");
 const pizza = document.querySelector(".pizza");
 const orderPrice = document.querySelector(".orderPrice");
 const tableOfContents = document.querySelector(".tableOfContents");
@@ -82,21 +85,20 @@ const addToOrder = (index) => {
   orderPrice.innerHTML = `${sum}₽`;
 };
 
-const addToPizzaIngredients = (index) => {
-  pizzaIngredients.push(addIngredientsMenu[index]);
-
-  addedGoods.innerHTML += ` <div class="addedProduct">${addIngredientsMenu[index].name}</div>
-    <div class="addedPrice">${addIngredientsMenu[index].price}₽</div>
-    <img id="closeIngredients" class="closeIngredients" src="assets/cancel.png" alt="Закрыть">`;
-};
-
 const sumIngredients = (index) => {
-  pizzaIngredients.push(addIngredientsMenu[index]);
   let sumI = 0;
   pizzaIngredients.forEach((element) => {
     sumI += element.price;
   });
   sumOfIngredients.innerHTML = `<p> Стоимость пиццы:${sumI}₽</p>`;
+};
+
+const addToPizzaIngredients = (index) => {
+  pizzaIngredients.push(addIngredientsMenu[index]);
+  sumIngredients(index);
+  addedGoods.innerHTML += ` <div class="addedProduct">${addIngredientsMenu[index].name}</div>
+    <div class="addedPrice">${addIngredientsMenu[index].price}₽</div>
+    <img id="closeIngredients" class="closeIngredients" src="assets/cancel.png" alt="Закрыть">`;
 };
 
 pizzaMenu.forEach((element, index) => {
@@ -118,7 +120,7 @@ addIngredientsMenu.forEach((element, index) => {
   <img class="productPhoto" src="${element.img}" alt="${element.name}">
   <div class="product">${element.name}</div>
   <div class="price">${element.price}₽</div>
-  <div onclick="sumIngredients(${index})" class="addIngredients">Собрать</div>
+  <div onclick="addToPizzaIngredients(${index})" class="addIngredients">Собрать</div>
 </div>`;
 });
 

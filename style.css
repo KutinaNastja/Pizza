@@ -48,6 +48,7 @@ p {
   gap: 5px;
   background: #ffffff;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .basket:active {
   transform: translateY(3px);
@@ -106,6 +107,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .go:active {
   transform: translateY(3px);
@@ -124,8 +126,9 @@ p {
   height: 600px;
   width: 900px;
   flex-direction: column;
-  /* display: none; */
+  display: none;
   overflow: scroll;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .pop_up::-webkit-scrollbar {
   width: 0;
@@ -136,6 +139,7 @@ p {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .addedGoods {
   display: flex;
@@ -144,6 +148,7 @@ p {
 .closeIngredients {
   height: 20px;
   cursor: pointer;
+  
 }
 .imgReadyPizza {
   height: 100px;
@@ -165,6 +170,7 @@ p {
   cursor: pointer;
   height: 20px;
   width: 100px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .tableOfIngredients {
   display: flex;
@@ -200,6 +206,48 @@ p {
   justify-content: center;
   padding: 10px;
 }
+.filter {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+}
+.vegetarian {
+  border-radius: 10px;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 30px;
+  background: #fdcfd7;
+  cursor: pointer;
+  width: 230px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.vegetarian:active {
+  transform: translateY(3px);
+}
+.meat {
+  border-radius: 10px;
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 30px;
+  background: #fdcfd7;
+  cursor: pointer;
+  width: 115px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.meat:active {
+  transform: translateY(3px);
+}
 .pizza {
   display: flex;
   padding: 20px;
@@ -215,6 +263,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .name {
   display: flex;
@@ -242,4 +291,5 @@ p {
   padding: 10px 50px;
   background: #fdcfd7;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }

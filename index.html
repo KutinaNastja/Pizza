@@ -56,9 +56,11 @@
       </div>
       <div class="menu">
         <div class="filter">
-          <div onclick="changeСolor(this)" class="meat">Мясная</div>
-          <p> или </p>
-          <div onclick="changeСolor(this)" class="vegetarian">Вегетарианская</div>
+          <div onclick="filerPizza(this, 'meat')" class="filterButton">Мясная</div>
+          <p>или</p>
+          <div onclick="filerPizza(this, 'vegetarian')" class="filterButton">
+            Вегетарианская
+          </div>
         </div>
         <div class="pizza"></div>
       </div>

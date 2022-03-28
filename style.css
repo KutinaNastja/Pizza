@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  -webkit-user-select: none;
 }
 p {
   font-family: "M PLUS 1", sans-serif;
@@ -48,7 +49,7 @@ p {
   gap: 5px;
   background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .basket:active {
   transform: translateY(3px);
@@ -95,7 +96,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .go:active {
   transform: translateY(3px);
@@ -116,7 +117,7 @@ p {
   flex-direction: column;
   display: none;
   overflow: scroll;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .pop_up::-webkit-scrollbar {
   width: 0;
@@ -127,17 +128,16 @@ p {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .addedGoods {
   display: flex;
   gap: 5px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 .closeIngredients {
   height: 20px;
   cursor: pointer;
-  
 }
 .imgReadyPizza {
   height: 100px;
@@ -159,7 +159,7 @@ p {
   cursor: pointer;
   height: 20px;
   width: 100px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .tableOfIngredients {
   display: flex;
@@ -201,41 +201,24 @@ p {
   padding: 10px;
   justify-content: center;
 }
-.vegetarian {
+.filterButton {
   border-radius: 10px;
   font-family: "M PLUS 1", sans-serif;
   font-size: 30px;
-  background-color: #fdcfd7;
+  background-color: rgb(253, 207, 215);
   cursor: pointer;
-  width: 230px;
-  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 5px 10px;
   margin: 0 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.vegetarian:active {
+.filterButton:active {
   transform: translateY(3px);
 }
-.meat {
-  border-radius: 10px;
-  font-family: "M PLUS 1", sans-serif;
-  font-size: 30px;
-  background-color: #fdcfd7;
-  cursor: pointer;
-  width: 115px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin: 0 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.meat:active {
-  transform: translateY(3px);
+.active {
+  background-color: #fd869bfa;
 }
 .pizza {
   display: flex;
@@ -252,7 +235,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .name {
   display: flex;
@@ -280,5 +263,8 @@ p {
   padding: 10px 50px;
   background: #fdcfd7;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.add:active {
+  transform: translateY(3px);
 }

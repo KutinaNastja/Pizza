@@ -5,6 +5,7 @@ let pizzaMenu = [
     Ingredient:
       "Острая чоризо, острый перец халапеньо, соус барбекю, митболы, томаты, сладкий перец, красный лук, моцарелла, томатный соус",
     price: 719,
+    type: "meat",
   },
   {
     name: "Цыпленок барбекю",
@@ -12,12 +13,14 @@ let pizzaMenu = [
     Ingredient:
       "Цыпленок, бекон, соус барбекю, красный лук, моцарелла, томатный соус",
     price: 719,
+    type: "meat",
   },
   {
     name: "Четыре сыра",
     img: "assets/pizza/cheesy.jpg",
     Ingredient: "Сыр блю чиз, сыры чеддер и пармезан, моцарелла, соус альфредо",
     price: 719,
+    type: "vegetarian",
   },
   {
     name: "Чикен бомбони",
@@ -25,6 +28,7 @@ let pizzaMenu = [
     Ingredient:
       "Куриные кусочки, сладкий перец, смесь сыров чеддер и пармезан, моцарелла, красный лук, соус сладкий чили, соус альфредо",
     price: 719,
+    type: "meat",
   },
 ];
 
@@ -61,7 +65,10 @@ let addIngredientsMenu = [
   },
 ];
 
+let pizzaType = [];
+
 const sumOfIngredients = document.querySelector(".sumOfIngredients");
+
 let order = [];
 let pizzaIngredients = [];
 const filter = document.querySelector(".filter");
@@ -74,14 +81,22 @@ let go = document.querySelector(".go");
 let close = document.querySelector(".close");
 let addIngredients = document.querySelector(".addIngredients");
 
-const changeСolor = (button) => {
-  console.log(button.style.backgroundColor);
-  if (button.style.backgroundColor === '#fdcfd7') {
-    button.style.backgroundColor = '#fd869bfa';
+const filerPizza = (button, type) => {
+  console.log(button.className.toString());
+  if (button.className.includes("active")) {
+    button.className = button.className.replace("active", "");
+    pizzaType = pizzaType.filter((v) => v !== type);
   } else {
-    button.style.backgroundColor = '#fdcfd7';
+    button.className += " active";
+    pizzaType.push(type);
   }
+  printPizza();
 };
+
+const requiredType = pizzaMenu.filter(function (element) {
+  return element.type === "meat";
+});
+console.log(requiredType);
 
 const addToOrder = (index) => {
   order.push(pizzaMenu[index]);
@@ -108,8 +123,17 @@ const addToPizzaIngredients = (index) => {
     <img id="closeIngredients" class="closeIngredients" src="assets/cancel.png" alt="Закрыть">`;
 };
 
-pizzaMenu.forEach((element, index) => {
-  pizza.innerHTML += `<div class="card">
+const printPizza = () => {
+  pizza.innerHTML = pizzaMenu
+    .filter(function (element) {
+      console.log(pizzaType);
+      if (!pizzaType.length) {
+        return true;
+      }
+      return pizzaType.includes(element.type);
+    })
+    .reduce((acc, element, index) => {
+      return (acc += `<div class="card">
 <img src="${element.img}" alt="${element.name}" />
 <div class="name">${element.name}</div>
 
@@ -119,8 +143,11 @@ ${element.Ingredient}
 <div class="purchase">
   <div class="price">${element.price}₽</div>
   <div onclick="addToOrder(${index})" class="add">Добавить</div>
-</div>`;
-});
+  </div>
+</div>`);
+    }, "");
+};
+printPizza();
 
 addIngredientsMenu.forEach((element, index) => {
   tableOfContents.innerHTML += ` <div class="tableOfIngredients">

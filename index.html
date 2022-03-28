@@ -14,7 +14,7 @@
     <title>Pizza</title>
   </head>
   <body>
-    <div id="background" class="background"></div>
+    <div id="backgroundGo" class="backgroundGo"></div>
     <div class="header">
       <div class="logo">
         <img class="piZZa" src="assets/pizza.png" alt="pizza" />
@@ -24,7 +24,6 @@
         <p>Корзина</p>
         <p class="orderPrice">0</p>
         <img class="bag" src="assets/shopping-bag.png" alt="Корзина" />
-        <img class="right" src="assets/right.png" alt="Переход в корзину" />
       </div>
     </div>
 
@@ -57,9 +56,9 @@
       </div>
       <div class="menu">
         <div class="filter">
-          <div class="meat">Мясная</div>
+          <div onclick="changeСolor(this)" class="meat">Мясная</div>
           <p> или </p>
-          <div class="vegetarian">Вегетарианская</div>
+          <div onclick="changeСolor(this)" class="vegetarian">Вегетарианская</div>
         </div>
         <div class="pizza"></div>
       </div>

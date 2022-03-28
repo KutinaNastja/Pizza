@@ -64,8 +64,6 @@ let addIngredientsMenu = [
 const sumOfIngredients = document.querySelector(".sumOfIngredients");
 let order = [];
 let pizzaIngredients = [];
-const meat = document.querySelector(".meat");
-const vegetarian = document.querySelector(".vegetarian");
 const filter = document.querySelector(".filter");
 const pizza = document.querySelector(".pizza");
 const orderPrice = document.querySelector(".orderPrice");
@@ -75,6 +73,15 @@ const addedGoods = document.querySelector(".addedGoods");
 let go = document.querySelector(".go");
 let close = document.querySelector(".close");
 let addIngredients = document.querySelector(".addIngredients");
+
+const changeСolor = (button) => {
+  console.log(button.style.backgroundColor);
+  if (button.style.backgroundColor === '#fdcfd7') {
+    button.style.backgroundColor = '#fd869bfa';
+  } else {
+    button.style.backgroundColor = '#fdcfd7';
+  }
+};
 
 const addToOrder = (index) => {
   order.push(pizzaMenu[index]);
@@ -127,19 +134,19 @@ addIngredientsMenu.forEach((element, index) => {
 go.onclick = () => {
   if (getComputedStyle(popup).display === "none") {
     popup.style.display = "flex";
-    background.style.display = "block";
+    backgroundGo.style.display = "block";
   } else {
     popup.style.display = "none";
-    background.style.display = "none";
+    backgroundGo.style.display = "none";
   }
 };
 
-background.onclick = () => {
+backgroundGo.onclick = () => {
   popup.style.display = "none";
-  background.style.display = "none";
+  backgroundGo.style.display = "none";
 };
 
 close.onclick = () => {
   popup.style.display = "none";
-  background.style.display = "none";
+  backgroundGo.style.display = "none";
 };

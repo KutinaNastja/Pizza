@@ -123,6 +123,7 @@ const addGeneratedPizzaToOrder = () => {
 };
 
 const sumIngredients = (index) => {
+  sumI = 0;
   pizzaIngredients.forEach((element) => {
     sumI += element.price;
   });
@@ -141,7 +142,6 @@ const addToPizzaIngredients = (index) => {
 const deleteIngredients = (index) => {
   pizzaIngredients = pizzaIngredients.filter((v, i) => i !== index);
   sumIngredients();
-  console.log(pizzaIngredients);
   addedGoods.innerHTML = "";
   pizzaIngredients.forEach((element, index) => {
     addedGoods.innerHTML += `<div class="styleProduct"><div class="addedProduct">${element.name}</div>

@@ -82,7 +82,6 @@ let close = document.querySelector(".close");
 let addIngredients = document.querySelector(".addIngredients");
 
 const filerPizza = (button, type) => {
-  console.log(button.className.toString());
   if (button.className.includes("active")) {
     button.className = button.className.replace("active", "");
     pizzaType = pizzaType.filter((v) => v !== type);
@@ -96,7 +95,6 @@ const filerPizza = (button, type) => {
 const requiredType = pizzaMenu.filter(function (element) {
   return element.type === "meat";
 });
-console.log(requiredType);
 
 const addToOrder = (index) => {
   order.push(pizzaMenu[index]);
@@ -107,26 +105,55 @@ const addToOrder = (index) => {
   orderPrice.innerHTML = `${sum}₽`;
 };
 
+let sumI = 0;
+const addGeneratedPizzaToOrder = () => {
+  const genPizza = {
+    name: "Идеальная пицца",
+    img: "assets/pizza/chicken.jpg",
+    Ingredient: pizzaIngredients.reduce((acc, v) => acc + v.name + ", ", ""),
+    price: sumI,
+  };
+
+  order.push(genPizza);
+  let sum = 0;
+  order.forEach((element) => {
+    sum += element.price;
+  });
+  orderPrice.innerHTML = `${sum}₽`;
+};
+
 const sumIngredients = (index) => {
-  let sumI = 0;
   pizzaIngredients.forEach((element) => {
     sumI += element.price;
   });
-  sumOfIngredients.innerHTML = `<p> Стоимость пиццы:${sumI}₽</p>`;
+  sumOfIngredients.innerHTML = `<p> Стоимость пиццы:${sumI}₽</p> <div onclick="addGeneratedPizzaToOrder()" class="addPizza">Добавить</div>`;
 };
 
 const addToPizzaIngredients = (index) => {
   pizzaIngredients.push(addIngredientsMenu[index]);
   sumIngredients(index);
-  addedGoods.innerHTML += ` <div class="addedProduct">${addIngredientsMenu[index].name}</div>
-    <div class="addedPrice">${addIngredientsMenu[index].price}₽</div>
-    <img id="closeIngredients" class="closeIngredients" src="assets/cancel.png" alt="Закрыть">`;
+  addedGoods.innerHTML += `<div class="styleProduct"><div class="addedProduct">${addIngredientsMenu[index].name}</div>
+  <div class="deleteProduct"><div class="addedPrice">${addIngredientsMenu[index].price}₽</div>
+    <img onclick="deleteIngredients(${index})" class="deleteIngredients" 
+    src="assets/cancel.png" alt="Закрыть"></div></div>`;
+};
+
+const deleteIngredients = (index) => {
+  pizzaIngredients = pizzaIngredients.filter((v, i) => i !== index);
+  sumIngredients();
+  console.log(pizzaIngredients);
+  addedGoods.innerHTML = "";
+  pizzaIngredients.forEach((element, index) => {
+    addedGoods.innerHTML += `<div class="styleProduct"><div class="addedProduct">${element.name}</div>
+  <div class="deleteProduct"><div class="addedPrice">${element.price}₽</div>
+    <img onclick="deleteIngredients(${index})" class="deleteIngredients" 
+    src="assets/cancel.png" alt="Закрыть"></div></div>`;
+  });
 };
 
 const printPizza = () => {
   pizza.innerHTML = pizzaMenu
     .filter(function (element) {
-      console.log(pizzaType);
       if (!pizzaType.length) {
         return true;
       }

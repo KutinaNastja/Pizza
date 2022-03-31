@@ -122,6 +122,11 @@ p {
 .pop_up::-webkit-scrollbar {
   width: 0;
 }
+.sumOfIngredients {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
 .readyPizza {
   display: flex;
   background: #ffffff;
@@ -132,10 +137,23 @@ p {
 }
 .addedGoods {
   display: flex;
-  gap: 5px;
   flex-wrap: wrap;
+  align-items: center;
+  padding: 0 0 0 10px;
+  justify-content: flex-start;
 }
-.closeIngredients {
+.styleProduct {
+  width: 132px;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.deleteProduct {
+  display: flex;
+  gap: 20px;
+}
+.deleteIngredients {
   height: 20px;
   cursor: pointer;
 }
@@ -267,4 +285,23 @@ p {
 }
 .add:active {
   transform: translateY(3px);
+}
+.addPizza {
+  font-family: "M PLUS 1", sans-serif;
+  font-size: 20px;
+  width: 150px;
+  height: 45px;
+  background: #fdcfd7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 100px;
+}
+.addPizza:active {
+  transform: translateY(3px);
+}
+.CostAndProducts {
+  padding: 10px;
 }

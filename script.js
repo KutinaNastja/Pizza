@@ -66,11 +66,9 @@ let addIngredientsMenu = [
 ];
 
 let pizzaType = [];
-
-const sumOfIngredients = document.querySelector(".sumOfIngredients");
-
 let order = [];
 let pizzaIngredients = [];
+const sumOfIngredients = document.querySelector(".sumOfIngredients");
 const filter = document.querySelector(".filter");
 const pizza = document.querySelector(".pizza");
 const orderPrice = document.querySelector(".orderPrice");

@@ -14,27 +14,32 @@
     <title>Pizza</title>
   </head>
   <body>
+
     <div id="backgroundGo" class="backgroundGo"></div>
+    <div  onclick="buttonPopUp()" class="backgroundBasket" ></div>
+   
     <div class="header">
       <div class="logo">
         <img class="piZZa" src="assets/pizza.png" alt="pizza" />
         <div class="logoPizza">Pizza</div>
       </div>
-      <div class="buttonAndBasket">
-        <div class="buttonPopUp">
-          <div class="closeBlock">
-            <img onclick="close()" class="close" src="assets/cancel.png" alt="Закрыть" />
-          </div>
-          <p class="makePizza">Ваша корзина!</p>
-          <div class="ReadyCart"></div>
-        </div>
-        </div>
       <div onclick="buttonPopUp()" class="basket">
         <p>Корзина</p>
         <p class="orderPrice">0</p>
         <img class="bag" src="assets/shopping-bag.png" alt="Корзина" />
       </div>
     </div>
+
+<div class="positionPopUp">
+    <div class="buttonPopUp">
+      <div class="closeBlock">
+        <img onclick="buttonPopUp()" class="closePopUp" src="assets/cancel.png" alt="Закрыть" />
+      </div>
+      <p class="makePizza">Ваша корзина!</p>
+      <div class="ReadyCart"></div>
+    </div>
+  </div>
+
   </div>
     <div class="collect">
       <div class="contentAndGo">

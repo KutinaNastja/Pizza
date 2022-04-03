@@ -91,12 +91,18 @@ const filerPizza = (button, type) => {
 };
 
 const buttonPopUp = () => {
-  const popUpElement=document.querySelector('.buttonPopUp')
+  const popUpElement = document.querySelector(".buttonPopUp");
+  const backgroundBasket = document.querySelector(".backgroundBasket");
   console.log(1);
   if (popUpElement.className.includes("activePopUp")) {
     popUpElement.className = popUpElement.className.replace("activePopUp", "");
+    backgroundBasket.className = backgroundBasket.className.replace(
+      "activeBackground",
+      ""
+    );
   } else {
     popUpElement.className += " activePopUp";
+    backgroundBasket.className += " activeBackground";
   }
 };
 

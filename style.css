@@ -36,6 +36,11 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  overflow-y: scroll;
+  height: 440px;
+}
+.readyCart:-webkit-scrollbar {
+  width: 0;
 }
 .cardInBasket {
   display: flex;
@@ -65,8 +70,13 @@ p {
 .nameInBasket {
   width: 300px;
 }
-.ingredientInBasket{
+.ingredientInBasket {
   width: 450px;
+}
+.positionSumBasket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header {
   background-color: #fdcfd7;
@@ -101,11 +111,7 @@ p {
   width: 900px;
   flex-direction: column;
   display: none;
-  overflow: scroll;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-.buttonPopUp::-webkit-scrollbar {
-  width: 0;
 }
 .activePopUp {
   display: block;

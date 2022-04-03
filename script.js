@@ -68,6 +68,8 @@ let addIngredientsMenu = [
 let pizzaType = [];
 let order = [];
 let pizzaIngredients = [];
+const sumBasket = document.querySelector(".sumBasket");
+const popUpElement = document.querySelector(".buttonPopUp");
 const readyCart = document.querySelector(".readyCart");
 const sumOfIngredients = document.querySelector(".sumOfIngredients");
 const filter = document.querySelector(".filter");
@@ -91,36 +93,44 @@ const filerPizza = (button, type) => {
   printPizza();
 };
 
-const allInCart = () =>
+const sumOrder = () => {
+  let sum = 0;
   order.forEach((element) => {
+    sum += element.price;
+  });
+  orderPrice.innerHTML = `${sum}₽`;
+  sumBasket.innerHTML = `<p> Стоимость заказа:${sum}₽</p>`;
+};
+
+const allInCart = () => {
+  readyCart.innerHTML = "";
+  sumOrder();
+  order.forEach((element, index) => {
     readyCart.innerHTML += `<div class="cardInBasket">
   <img class="imgInBasket" src="${element.img}" alt="${element.name}" />
-
-  
   <div class="description" >
   <div class="nameInBasket"><p>${element.name}</p></div>
-
   <div class="description2" >
-
 <div class="deleteIngredientsInBasket">
-
-  <img onclick="deleteIngredients()" class="deleteIngredients" 
+  <img onclick="deletePizzainBasket(${index})" class="deleteIngredients" 
   src="assets/cancel.png" alt="Закрыть"></div>
-
   <div class="ingredientInBasket">
   ${element.Ingredient}
   </div>
   <div class="purchaseInBasket">
     <div class="priceInBasket"><p>${element.price}₽</p></div>
-
-    
     </div>
     </div>`;
   });
-console.log(order);
+};
+
+const deletePizzainBasket = (index) => {
+  console.log(1);
+  order = order.filter((v, i) => i !== index);
+  allInCart();
+};
 
 const buttonPopUp = () => {
-  const popUpElement = document.querySelector(".buttonPopUp");
   const backgroundBasket = document.querySelector(".backgroundBasket");
   if (popUpElement.className.includes("activePopUp")) {
     popUpElement.className = popUpElement.className.replace("activePopUp", "");
@@ -141,11 +151,7 @@ const requiredType = pizzaMenu.filter(function (element) {
 
 const addToOrder = (index) => {
   order.push(pizzaMenu[index]);
-  let sum = 0;
-  order.forEach((element) => {
-    sum += element.price;
-  });
-  orderPrice.innerHTML = `${sum}₽`;
+  sumOrder();
 };
 
 let sumI = 0;

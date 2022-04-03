@@ -32,6 +32,42 @@ p {
 .activeBackground {
   display: block;
 }
+.readyCart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.cardInBasket {
+  display: flex;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+.imgInBasket {
+  display: flex;
+  height: 100px;
+  cursor: pointer;
+}
+.description {
+  display: flex;
+}
+.deleteIngredientsInBasket {
+  display: flex;
+  justify-content: flex-end;
+}
+.purchaseInBasket {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.nameInBasket {
+  width: 300px;
+}
+.ingredientInBasket{
+  width: 450px;
+}
 .header {
   background-color: #fdcfd7;
   display: flex;

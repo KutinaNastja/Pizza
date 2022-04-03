@@ -68,6 +68,7 @@ let addIngredientsMenu = [
 let pizzaType = [];
 let order = [];
 let pizzaIngredients = [];
+const readyCart = document.querySelector(".readyCart");
 const sumOfIngredients = document.querySelector(".sumOfIngredients");
 const filter = document.querySelector(".filter");
 const pizza = document.querySelector(".pizza");
@@ -90,10 +91,37 @@ const filerPizza = (button, type) => {
   printPizza();
 };
 
+const allInCart = () =>
+  order.forEach((element) => {
+    readyCart.innerHTML += `<div class="cardInBasket">
+  <img class="imgInBasket" src="${element.img}" alt="${element.name}" />
+
+  
+  <div class="description" >
+  <div class="nameInBasket"><p>${element.name}</p></div>
+
+  <div class="description2" >
+
+<div class="deleteIngredientsInBasket">
+
+  <img onclick="deleteIngredients()" class="deleteIngredients" 
+  src="assets/cancel.png" alt="Закрыть"></div>
+
+  <div class="ingredientInBasket">
+  ${element.Ingredient}
+  </div>
+  <div class="purchaseInBasket">
+    <div class="priceInBasket"><p>${element.price}₽</p></div>
+
+    
+    </div>
+    </div>`;
+  });
+console.log(order);
+
 const buttonPopUp = () => {
   const popUpElement = document.querySelector(".buttonPopUp");
   const backgroundBasket = document.querySelector(".backgroundBasket");
-  console.log(1);
   if (popUpElement.className.includes("activePopUp")) {
     popUpElement.className = popUpElement.className.replace("activePopUp", "");
     backgroundBasket.className = backgroundBasket.className.replace(
@@ -104,6 +132,7 @@ const buttonPopUp = () => {
     popUpElement.className += " activePopUp";
     backgroundBasket.className += " activeBackground";
   }
+  allInCart();
 };
 
 const requiredType = pizzaMenu.filter(function (element) {
@@ -123,7 +152,7 @@ let sumI = 0;
 const addGeneratedPizzaToOrder = () => {
   const genPizza = {
     name: "Идеальная пицца",
-    img: "assets/pizza/chicken.jpg",
+    img: "assets/pizza.png",
     Ingredient: pizzaIngredients.reduce((acc, v) => acc + v.name + ", ", ""),
     price: sumI,
   };

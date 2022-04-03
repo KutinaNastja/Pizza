@@ -39,6 +39,27 @@ p {
 .logo {
   display: flex;
 }
+.buttonPopUp {
+  display: flex;
+  z-index: 100;
+  position: absolute;
+  background-color: #fdcfd7;
+  border-radius: 10px;
+  left: 500px;
+  top: 200px;
+  height: 600px;
+  width: 900px;
+  flex-direction: column;
+  display: none;
+  overflow: scroll;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.buttonPopUp::-webkit-scrollbar {
+  width: 0;
+}
+.activePopUp {
+  display: block;
+}
 .basket {
   display: flex;
   align-items: center;

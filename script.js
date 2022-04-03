@@ -90,6 +90,16 @@ const filerPizza = (button, type) => {
   printPizza();
 };
 
+const buttonPopUp = () => {
+  const popUpElement=document.querySelector('.buttonPopUp')
+  console.log(1);
+  if (popUpElement.className.includes("activePopUp")) {
+    popUpElement.className = popUpElement.className.replace("activePopUp", "");
+  } else {
+    popUpElement.className += " activePopUp";
+  }
+};
+
 const requiredType = pizzaMenu.filter(function (element) {
   return element.type === "meat";
 });
